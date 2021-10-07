@@ -48,10 +48,12 @@ app.get('/', (req, res) => {
 });
 
 app.post('/pinMusicSourceToIPFS', multerMusic.single("music"), (req, res) => {
+    console.log("welcome to music source!");
     const url = "https://api.pinata.cloud/pinning/pinFileToIPFS";
     let data = new FormData();
     let fsData = fs.createReadStream('./MusicToUpload/' + req.file.filename);
     data.append('file', fsData);
+    console.log("let me start music process..");
     return axios.post(url, data, {
         maxBodyLength: 'Infinity',
         headers: {
@@ -69,11 +71,12 @@ app.post('/pinMusicSourceToIPFS', multerMusic.single("music"), (req, res) => {
 });
 
 app.post('/pinAlbumCoverToIPFS', multerImage.single("image"), (req, res) => {
+    console.log("welcome to image source!");
     const url = "https://api.pinata.cloud/pinning/pinFileToIPFS";
     let data = new FormData();
     let fsData = fs.createReadStream('./ImageToUpload/' + req.file.filename);
     data.append('file', fsData);
-
+    console.log("let me start image process..");
     return axios.post(url, data, {
         maxBodyLength: 'Infinity',
         headers: {
