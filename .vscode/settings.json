@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c74c3589-0b28-4bd5-9bc8-44e064b28654/resourceGroups/Bibimbap/providers/Microsoft.Web/sites/Bibimbeat-Backend",
+    "appService.deploySubpath": "."
+}
